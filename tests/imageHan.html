@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" enctype="multipart/form-data" id='form_data'>
+        name:<input type="text" name='name'>
+        <br> pass:<input type="password" name='pass'>
+        <textarea name="Message" id="" cols="30" rows="10"></textarea>
+        <br> file: <input type="file" name="image" id=""><br>
+        <input type="submit" value="submit">
+    </form>
+</body>
+<script>
+    // const data = new FormData;
+    document.querySelector('input[type=submit').addEventListener('click', (e) => {
+        e.preventDefault();
+        const formData = new FormData(form_data);
+        img = document.querySelector('input[type=file').files[0];
+        formData.append('photo', img);
+        fetch('./ajax/test.php', {
+            method: 'post',
+            body: formData
+        }).then(res => {
+            return res.text()
+        }).then(dta => {
+            console.log(dta);
+        }).catch(er => {
+            console.log(er);
+        })
+
+    })
+</script>
+
+</html>

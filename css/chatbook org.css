@@ -1,0 +1,273 @@
+* {
+    padding: 0%;
+    margin: 0%;
+}
+
+h1 {
+    font-family: 'Big Shoulders Display', cursive;
+}
+
+h2 {
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+h3 {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+h4 {
+    font-family: 'Satisfy', cursive;
+}
+
+h5 {
+    font-family: 'Caveat', cursive;
+}
+
+
+/* <<<<<<<<<<<<<<<<<<<<=================== Contact Div start here ================>>>>>>>>>>>>>> */
+
+.contact {
+    background: rgb(245, 243, 243);
+    border-top: 1px solid gray;
+    /* border-bottom: 1px solid gray; */
+    padding: 1%;
+}
+
+.contact:hover {
+    cursor: pointer;
+    background: rgb(194, 188, 188);
+}
+
+.contact_div {
+    background: transparent;
+    /* border-left: 1px solid #ffffff; */
+    /* border-right: .5px solid #000000; */
+    margin: 0%;
+}
+
+.contact_icon {
+    padding: 0%;
+    margin: 0%;
+    background: transparent;
+    max-height: 55px;
+    max-width: 55px;
+    overflow: hidden;
+}
+
+.contact_icon img {
+    padding: 0%;
+    margin: 0%;
+    /* z-index: 100px; */
+    border-radius: 50%;
+    width: 100%;
+}
+
+.contact_title {
+    background: transparent;
+    padding-left: 4%;
+    min-height: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.last_message_time {
+    padding-right: 4%;
+    text-align: right;
+    background: transparent;
+    min-height: 30px;
+    font-weight: none;
+    /* font-family: 'Pontano Sans', sans-serif; */
+}
+
+.last_message {
+    background: transparent;
+    min-height: 25px;
+    padding-left: 4%;
+    font-family: 'Satisfy', cursive;
+}
+.contact_detail {
+    min-height: 55px;
+    background: transparent;
+}
+
+/* <<<<<<<<<<<<<<<<<<<<=================== Contact Div End here ================>>>>>>>>>>>>>> */
+/* <<<<<<<<<<<<<<<<<<<<=================== Contact Header start here ================>>>>>>>>>>>>>> */
+
+/* <<<<<<<<<<<<<<<<<<<<=================== Contact Header End here ================>>>>>>>>>>>>>> */
+/* <<<<<<<<<<<<<<<<<<<<=================== Message div start here ================>>>>>>>>>>>>>> */
+
+.message_maindiv {
+    position: flex;
+    /* border: 1px solid red; */
+    min-width: 510px;
+    /* color: brown; */
+}
+
+.messages-container {
+    position: relative;
+    width: 100%;
+    max-height: 445px;
+    border: 0px solid black;
+    /* set borde 0px*/
+    display: flex;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.messages {
+    width: 100%;
+    padding: 8px;
+    margin: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: whitesmoke;
+    overflow: auto;
+    font: 16px/1.3 sans-serif;
+}
+
+.messages li {
+    list-style-type: none;
+    margin: 2px 8px 2px 0;
+    float: left;
+    border-radius: 8px;
+    padding: 8px;
+    color: black;
+    position: relative;
+    z-index: 1;
+    background: #eee;
+}
+
+.messages li.mine {
+    margin: 2px 0 2px 8px;
+    align-self: flex-end;
+    z-index: 0;
+    background: cyan;
+    color: white;
+}
+
+@supports(mix-blend-mode: screen) {
+    .message-type:after,
+    .messages-container:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(rgb(255, 143, 178) 0%, rgb(167, 151, 255) 50%, rgb(0, 229, 255) 100%);
+        mix-blend-mode: screen;
+        pointer-events: none;
+    }
+    .messages li.mine {
+        background: blue;
+    }
+}
+
+.time_stamp {
+    color: gray;
+    font-size: .7em;
+    /* display: flex; */
+    flex-direction: row-reverse;
+    display: none;
+}
+
+.messages li:hover {
+    cursor: pointer;
+}
+
+.messages li:hover .time_stamp {
+    display: flex;
+}
+
+
+/* <<<<<<<<<<<<<<<<<<<<=================== Message Div End here ================>>>>>>>>>>>>>> */
+
+
+/* <<<<<<<<<<<<<<<<<<<<=================== input box Div Start here ================>>>>>>>>>>>>>> */
+
+.input_maindiv {
+    background: linear-gradient(rgba(167, 151, 255, .01) 5%, rgba(0, 229, 255, .2) 100%);
+}
+
+.input_container {
+    /* background: rgb(245, 243, 243); */
+    /* background: black; */
+    border-radius: 50px;
+    padding: 1%;
+    padding-left: 5%;
+    padding-right: 5%;
+    min-width: 510px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.input_div {
+    padding: 1%;
+    background-color: white;
+    border-radius: 50px;
+    position: relative;
+}
+
+.input_box {
+    font-family: 'Satisfy', cursive;
+    font-size: 1rem;
+    padding-left: 10%;
+    max-height: 100px;
+    min-height: 10px;
+    height: 30px;
+    width: 80%;
+    /* width: 100%; */
+    outline: none;
+    border: none;
+    background-color: #fff;
+    /* overflow-y: scroll; */
+    resize: none;
+}
+
+.send_button {
+    border-radius: 50%;
+    margin-left: .5%;
+    max-width: 60px;
+    max-height: 60px;
+    background-color: #fff;
+    margin-left: 3%;
+    right: 10%;
+    bottom: 20%;
+    padding: 12px;
+}
+
+.send_button img {
+    width: 100%;
+    /* height: 100%; */
+}
+
+.input_container img:hover {
+    cursor: pointer;
+}
+
+.input_container .send_button:hover {
+    background: linear-gradient(rgba(0, 229, 255, .5)0%, rgba(255, 143, 178, 0.5) 100%);
+}
+
+.input_div label:hover {
+    background: linear-gradient(rgba(0, 229, 255, .5)0%, rgba(255, 143, 178, 0.5) 100%);
+}
+
+.input_div label {
+    margin-left: 1%;
+    width: 5%;
+    height: 35px;
+    padding: 3px;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.input_div label img {
+    width: 100%;
+}
+
+
+/* <<<<<<<<<<<<<<<<<<<<=================== input_box Div End here ================>>>>>>>>>>>>>> */

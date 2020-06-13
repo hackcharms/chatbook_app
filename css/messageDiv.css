@@ -1,0 +1,84 @@
+.contact_details_popup .container {
+    padding: 2%;
+    /* height: 98%; */
+    /* overflow-y: scroll; */
+    background-color: rgba(11, 117, 46, 0.85);
+}
+
+.contact_details_popup .container .name_header {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 200%;
+    text-align: center;
+}
+
+.contact_details_popup .container>div {
+    margin-top: 1%;
+    background-color: rgba(56, 47, 47, 0.5);
+}
+
+.contact_details_popup .image_block {
+    /* height: ; */
+    overflow: hidden;
+}
+
+.contact_details_popup .image_block_circle {
+    height: 100%;
+    /* box-shadow: gray -5px -5px 20px, gray 5px 5px 20px; */
+    /* overflow: hidden; */
+    border-radius: 50%;
+}
+
+.contact_details_popup .image_block_circle img {
+    /* width: 320px; */
+    width: 100%;
+    border-radius: 50%;
+}
+
+.contact_details_popup .media_block {
+    /* height: 20%; */
+    padding: 2%;
+    font-size: 100%;
+}
+
+.contact_details_popup .media_block .media_block_contents {
+    height: 80%;
+    overflow-x: scroll;
+    display: flex;
+    flex-wrap: nowrap;
+    scroll-behavior: smooth;
+}
+
+.contact_details_popup .media_block .media_block_contents img {
+    cursor: pointer;
+    height: 70px;
+    margin-right: .5%;
+}
+
+.details_block table {
+    padding: 4%;
+    border: none;
+}
+
+.details_block table tr td:nth-child(1) {
+    width: 30%;
+    text-align: right;
+    /* border: none; */
+}
+
+.details_block table tr td:nth-child(2) {
+    width: 70%;
+    padding-left: 10%;
+    /* border: none; */
+}
+
+
+/* User Header Extra */
+
+#contact_header {
+    min-height: 80px;
+    padding: 2%;
+    background-color: rgb(245, 243, 243);
+}
+
+
+/* <<<<<<<<<<<<<<<<<<<<=================== Message div start here ================>>>>>>>>>>>>>> */

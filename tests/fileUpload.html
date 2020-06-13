@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #image_input {
+        display: none;
+    }
+    
+    embed {
+        background-color: #f2ff;
+        overflow: hidden;
+    }
+    
+    .div {
+        width: 100%;
+    }
+    
+    input {
+        display: none;
+    }
+    
+    div {
+        box-sizing: border-box;
+        float: left;
+        padding: 1%;
+    }
+    
+    .image_upload {
+        width: min-content;
+        cursor: pointer;
+    }
+    
+    .div i {
+        font-size: 50px;
+        cursor: pointer;
+    }
+</style>
+<script>
+    window.addEventListener('load', () => {
+        files = document.getElementsByTagName('a');
+        console.log(files[0].href);
+        match = files[0].href.match(/\w*\.\w+$/);
+        console.log(match[0]);
+    })
+
+    function GetFileInfo() {
+        var fileInput = document.getElementById("docUpload");
+        console.log(fileInput.files);
+        var message = "";
+        if ('files' in fileInput) {
+            if (fileInput.files.length == 0) {
+                message = "Please browse for one or more files.";
+            } else {
+                for (var i = 0; i < fileInput.files.length; i++) {
+                    message += "<br /><b>" + (i + 1) + ". file</b><br />";
+                    var file = fileInput.files[i];
+                    if ('name' in file) {
+                        message += "name: " + file.name + "<br />";
+                    } else {
+                        message += "name: " + file.fileName + "<br />";
+                    }
+                    if ('size' in file) {
+                        message += "size: " + file.size + " bytes <br />";
+                    } else {
+                        message += "size: " + file.fileSize + " bytes <br />";
+                    }
+                    if ('mediaType' in file) {
+                        message += "type: " + file.mediaType + "<br />";
+                    }
+                }
+            }
+        } else {
+            if (fileInput.value == "") {
+                message += "Please browse for one or more files.";
+                message += "<br />Use the Control or Shift key for multiple selection.";
+            } else {
+                message += "Your browser doesn't support the files property!";
+                message += "<br />The path of the selected file: " + fileInput.value;
+            }
+        }
+
+        var info = document.getElementById("info");
+        info.innerHTML = message;
+    }
+</script>
+
+<body onload="GetFileInfo()">
+    <div class="div">
+        <div class="image_upload">
+            <label for="image_input">
+            <i class="fa fa-image" title="Upload images"></i>
+        </label>
+            <input id='image_input' type="file" name="file">
+        </div>
+        <div class="docUpload">
+            <label for="docUpload">
+            <i class="fa fa-file" title="Document images"></i>
+        </label>
+            <input type="file" name="docUpload" id="docUpload" accept=".xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf" multiple="multiple" size="60" onchange="GetFileInfo ()" />
+        </div>
+        <!-- <embed src="./regularExpressionMetaChar.pdf" type="application/pdf"> -->
+        <br><a href="./regularExpressionMetaChar.pdf">pdf file</a>
+        <br><a href="./regularExpressionMetaChar.pdf">pdf file</a>
+        <br><a href="./image/dp1.JPG">image file</a>
+        <div id="info">
+
+        </div>
+    </div>
+</body>
+
+</html>

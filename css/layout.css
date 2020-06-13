@@ -1,0 +1,261 @@
+.bodyDiv {
+    position: absolute;
+    height: 100%;
+    width: max-content;
+    background-color: rgb(194, 115, 115);
+    padding: 2%;
+}
+
+
+/* <<<<<<<<<<<<<<<<<<<<=================== main Div start here ================>>>>>>>>>>>>>> */
+
+.contact_details_popup {
+    background-color: rgba(78, 44, 44, 0.72);
+    position: absolute;
+    height: 100%;
+    z-index: 10;
+    padding: 4%;
+    /* margin-left: -1%; */
+    overflow-y: scroll;
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-bottom: 10%;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.main_div {
+    position: absolute;
+    height: 90%;
+    background-color: rgb(17, 211, 11);
+    width: 95%;
+    overflow: hidden;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.chatbook_header {
+    background-color: rgb(245, 243, 243);
+    border: 1px solid black;
+    border-radius: 5px;
+    /* margin-left: -.6%; */
+    padding: 1%;
+    position: relative;
+}
+
+.chatbook_header>div {
+    display: table-cell;
+    vertical-align: text-bottom;
+}
+
+.chatbook_header>div h1 {
+    font-size: 4em;
+}
+
+.chatbook_header>div h3 {
+    font-size: 2.5em;
+    font-family: 'Big Shoulders Display', cursive;
+}
+
+.chatbook_header img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.chatbook_header div a {
+    border: 1px solid black;
+    text-align: center;
+    text-decoration: none;
+    background: gray;
+    color: white;
+    border-radius: 5px;
+    position: absolute;
+    /* top: -15px; */
+    right: -10px;
+}
+
+.chatbook_header div a:hover {
+    background-color: red;
+}
+
+
+/* <<<<<<<<<<<<<<<<<<<<=================== contact_Div start here ================>>>>>>>>>>>>>> */
+
+.contact_div {
+    border-left: 1px solid #bd1616;
+    border-right: .5px solid #000000;
+    background-color: #fff;
+    height: 85.4%;
+    margin: 0%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+}
+
+.contact_div::-webkit-scrollbar {
+    width: .5em;
+}
+
+.contact_div::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, .5);
+    border-radius: 30px;
+    box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, .25), inset -2px -2px 2px rgba(0, 0, 0, .25);
+}
+
+.contact_div::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+
+/* <<<<<<<<<<<<<<<<<<<<=================== contact_Div End here ================>>>>>>>>>>>>>> */
+
+
+/* <<<<<<<<<<<<<<<<<<<<=================== message_div start here ================>>>>>>>>>>>>>> */
+
+.rightDiv {
+    height: 85.4%;
+    position: absolute;
+    right: 0%;
+    background: url('');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.rightDivdefault {
+    position: absolute;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.rightDivdefault div {
+    text-align: center;
+    /* vertical-align: middle; */
+    position: relative;
+    height: 33.33%;
+    /* overflow: scroll; */
+}
+
+.rightDivdefault div h1,
+a h3 {
+    background-color: rgba(204, 197, 197, .5);
+    font-family: 'Big Shoulders Display', cursive;
+}
+
+#message_maindiv {
+    display: none;
+    height: 100%;
+    position: absolute;
+    right: 0%;
+    animation: rotateY 1s;
+}
+
+@keyframes rotateY {
+    0% {
+        opacity: 0;
+        transform: rotateY(90deg);
+    }
+    100% {
+        opacity: 1;
+        transform: rotateY(0deg);
+    }
+}
+
+.messageMain {
+    position: absolute;
+    top: 18%;
+    height: 79%;
+    width: 65.5%;
+    /* background: rgb(245, 10, 10); */
+}
+
+.messages-container_box {
+    position: absolute;
+    height: 80%;
+    width: 64%;
+    width: 100%;
+    z-index: 0;
+}
+
+.messages {
+    padding: 2%;
+    padding-bottom: 4%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(16, 16, 15, .5) rgba(240, 230, 230, .2);
+    font: 16px/1.3 sans-serif;
+    height: 100%;
+}
+
+.messages::-webkit-scrollbar {
+    width: .4em;
+}
+
+.messages::-webkit-scrollbar-thumb {
+    background: rgba(16, 16, 15, .5);
+}
+
+.messages::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+
+/* <<<<<<<<<<<<<<<<<<<<=================== chat_box start here ================>>>>>>>>>>>>>> */
+
+.inputFooter {
+    min-height: 62px;
+    order: 3;
+    position: absolute;
+    bottom: 0%;
+    flex: none;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.chat-box-tray textarea {
+    resize: none;
+    margin-left: 30px;
+    padding: 0px;
+    width: 85%;
+    outline: none;
+    height: 36px;
+    max-height: 100px;
+    font-size: 130%;
+    border: none;
+    background-color: none;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+}
+
+.chat-box-tray textarea::-webkit-scrollbar {
+    width: .4em;
+}
+
+.chat-box-tray textarea::-webkit-scrollbar-thumb {
+    background: rgba(16, 16, 15, .5);
+}
+
+.chat-box-tray i {
+    display: inline-block;
+    width: 38px;
+    height: 38px;
+    background-color: rgb(245, 243, 243);
+    padding: 7px 8px;
+    border-radius: 35px;
+    color: grey;
+    font-size: 25px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+
+/* <<<<<<<<<<<<<<<<<<<<=================== chatbox end here ================>>>>>>>>>>>>>> */
+
+
+/* <<<<<<<<<<<<<<<<<<<<=================== message_div end here ================>>>>>>>>>>>>>> */

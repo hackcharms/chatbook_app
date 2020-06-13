@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h2 {
+        text-align: center;
+    }
+    
+    .box {
+        background: goldenrod;
+        width: 300px;
+        height: 300px;
+        margin: 30px auto;
+        transition: all 1s linear;
+        display: block;
+    }
+    
+    .hidden {
+        display: none;
+    }
+    
+    .visuallyhidden {
+        opacity: 0;
+    }
+    
+    button {
+        display: block;
+        margin: 0 auto;
+    }
+</style>
+
+<body>
+    <h2>Animating from <code>display:block</code> to <code>display:none</code></h2>
+    <div id="box" class="box"></div>
+
+    <button>TOGGLE VISIBILITY</button>
+</body>
+<script>
+    let box = document.getElementById('box'),
+        btn = document.querySelector('button');
+    console.log(btn);
+    btn.addEventListener('click', function() {
+
+        if (box.classList.contains('hidden')) {
+            box.classList.remove('hidden');
+            setTimeout(function() {
+                box.classList.remove('visuallyhidden');
+            }, 20);
+        } else {
+            box.classList.add('visuallyhidden');
+            box.addEventListener('transitionend', function(e) {
+                box.classList.add('hidden');
+            }, {
+                capture: false,
+                once: true,
+                passive: false
+            });
+        }
+
+    }, false);
+</script>
+
+</html>

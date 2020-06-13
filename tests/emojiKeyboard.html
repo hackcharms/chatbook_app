@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    p span{
+        background-color: brown;
+    }
+</style>
+
+<body>
+    <div class="keyborad" id="key">
+        <h1>EnterTainment</h1>
+        <p class="emoji_group"></p>
+        <h1>Buildings</h1>
+        <p class="emoji_group"></p>
+        <h1>Animals</h1>
+        <p class="emoji_group"></p>
+        <h1>Guesture</h1>
+        <p class="emoji_group"></p>
+        <h1>Nature</h1>
+        <p class="emoji_group"></p>
+        <h1>Love</h1>
+        <p class="emoji_group"></p>
+        <h1>office</h1>
+        <p class="emoji_group"></p>
+        <h1>Sign</h1>
+        <p class="emoji_group"></p>
+        <h1>smily</h1>
+        <p class="emoji_group"></p>
+        <h1>vehicles</h1>
+        <p class="emoji_group"></p>
+        <h1>None</h1>
+        <p class="emoji_group"></p>
+
+    </div>
+    
+    <div>
+        <input type="text">
+    </div>
+</body>
+<script>
+    keyb=document.getElementsByClassName('emoji_group');
+    k=127789;
+    while(k<129339)
+    {
+        html='';
+        if(k>=127876 && k<=127955)
+        {j=0}
+        else if(k>=127956 && k<=127984)
+        {j=1}
+        else if(k>=128000 && k<=128063)
+        {j=2}
+        else if(k>=128064 && k<=128140)
+        {j=3}
+        else if((k>=127789 && k<=127888)||(k>=129340 && k<=129472))
+        {j=4}
+        else if(k>=128139 && k<=128171)
+        {j=5}
+        else if(k>=128172 && k<=128292)
+        {j=6}
+        else if((k>=128293 && k<=128359)||(k>=129488 && k<=129503))
+        {j=7}
+        else if((k>=128512 && k<=128591)||(k>=129296 && k<=129338))
+        {j=8}
+        else if(k>=128591 && k<=128705)
+        {j=9}
+        else{
+            j=10;
+        }
+        em='&#'+k;
+        html+='<span>'+em+'</span><i>'+k+'</i>';
+        keyb[j].innerHTML+=html;
+        k++;
+    }
+</script>
+</html>

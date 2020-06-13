@@ -1,0 +1,262 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+div {
+    /* text-align: center; */
+    background-color: rgb(245, 243, 243);
+}
+
+.outer {
+    padding: 2%;
+}
+
+main {
+    /* border: 1px solid red; */
+}
+
+header {
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding-right: 2%;
+    text-align: right;
+    font-family: 'Big Shoulders Display', cursive;
+    font-size: 2em;
+    background: rgb(235, 232, 232);
+}
+
+button {
+    background-color: rgb(207, 195, 195);
+    border-radius: 35px;
+    font-family: 'Big Shoulders Display', cursive;
+}
+
+button:hover {
+    background-color: rgb(146, 130, 130);
+    color: white;
+}
+
+header h1 {
+    padding: 0%;
+    margin: 0px;
+}
+
+.leftDiv,
+.rightDiv {
+    background: url('../image/PortaiteBanner.jpg');
+    min-height: 450px;
+    background-size: contain;
+    background-position-x: center;
+    background-repeat: no-repeat;
+}
+
+form input:not([type=submit]) {
+    width: 100%;
+    border: 0px;
+    height: 3em;
+    font-size: 1em;
+    border-radius: 25px 5px 25px 5px;
+    padding: 2px 4%;
+    /* position: relative; */
+}
+
+form input:focus {
+    border-bottom: 2px solid black;
+}
+
+form span {
+    float: right;
+    margin-left: -30px;
+    margin-top: 15px;
+    position: relative;
+    z-index: 2;
+}
+
+form button {
+    width: 8em;
+    height: 3em;
+    float: right;
+}
+
+form label {
+    font-size: 1.2em;
+    font-family: 'Satisfy', cursive;
+}
+
+form#login {
+    display: block;
+    animation: anima .5s;
+}
+
+form#signup {
+    display: none;
+    animation: anima .5s;
+}
+
+form#forgetPass {
+    display: none;
+    animation: anima .5s;
+}
+
+@keyframes anima {
+    0% {
+        /* transform: scale(0); */
+        transform: rotateY(90deg);
+        opacity: 0;
+    }
+    100% {
+        /* transform: scale(1); */
+        transform: rotateY(0deg);
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    [class*="col-"]:not(button) {
+        width: 100%;
+    }
+    header h1 {
+        font-size: 1.5em;
+    }
+    .leftDiv,
+    .rightDiv {
+        /* border: 1px solid black; */
+        margin-top: 2%;
+        margin-bottom: 4%;
+        background: url('../image/LandScapeBanner.jpg');
+        /* height: 200px; */
+        min-height: 8em;
+        /* max-height: 200px; */
+        background-size: contain;
+        background-position-x: center;
+        background-repeat: no-repeat;
+    }
+}
+
+#clickVerify {
+    border: 1px solid transparent;
+    background: gray;
+    border-radius: 5px;
+    padding: 2% 5%;
+    color: white;
+    text-decoration: none;
+}
+
+#clickVerify:hover {
+    /* color: wheat; */
+    background: rgb(177, 171, 171);
+}
+
+
+/*============================================== Loader============================== */
+
+.lds-roller {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    padding-left: 30%;
+}
+
+.lds-roller div {
+    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    transform-origin: 40px 40px;
+}
+
+.lds-roller div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: blue;
+    margin: -4px 0 0 -4px;
+}
+
+.lds-roller div:nth-child(1) {
+    animation-delay: -0.036s;
+}
+
+.lds-roller div:nth-child(1):after {
+    top: 63px;
+    left: 63px;
+}
+
+.lds-roller div:nth-child(2) {
+    animation-delay: -0.072s;
+}
+
+.lds-roller div:nth-child(2):after {
+    top: 68px;
+    left: 56px;
+}
+
+.lds-roller div:nth-child(3) {
+    animation-delay: -0.108s;
+}
+
+.lds-roller div:nth-child(3):after {
+    top: 71px;
+    left: 48px;
+}
+
+.lds-roller div:nth-child(4) {
+    animation-delay: -0.144s;
+}
+
+.lds-roller div:nth-child(4):after {
+    top: 72px;
+    left: 40px;
+}
+
+.lds-roller div:nth-child(5) {
+    animation-delay: -0.18s;
+}
+
+.lds-roller div:nth-child(5):after {
+    top: 71px;
+    left: 32px;
+}
+
+.lds-roller div:nth-child(6) {
+    animation-delay: -0.216s;
+}
+
+.lds-roller div:nth-child(6):after {
+    top: 68px;
+    left: 24px;
+}
+
+.lds-roller div:nth-child(7) {
+    animation-delay: -0.252s;
+}
+
+.lds-roller div:nth-child(7):after {
+    top: 63px;
+    left: 17px;
+}
+
+.lds-roller div:nth-child(8) {
+    animation-delay: -0.288s;
+}
+
+.lds-roller div:nth-child(8):after {
+    top: 56px;
+    left: 12px;
+}
+
+@keyframes lds-roller {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load On Scroll</title>
+    <link rel="stylesheet" href="../css/messageBox.css">
+    <link rel="stylesheet" href="../css/messageDiv.css">
+    <link rel="stylesheet" href="../css/columns.css">
+</head>
+
+<style>
+    #outer {
+        background-color: #f2ff;
+        position: absolute;
+        height: 400px;
+        width: 200px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    
+    #inner {
+        background-color: #2ff;
+    }
+    
+    #inner p {
+        height: 100px;
+        background-color: #ff5;
+    }
+</style>
+
+<body>
+    <div id="outer">
+        <div id="inner">
+
+        </div>
+    </div>
+</body>
+<script>
+    var outer = document.getElementById('outer');
+    var inner = document.getElementById('inner');
+    // console.log(inner);
+    // console.log('scrolled');
+    fetchData(0);
+
+    function fetchData(lastIdNumb) {
+
+        fetch('./content.php?lastid=' + lastIdNumb).then(res => {
+            return res.json()
+        }).then(data => {
+            var inner = document.getElementById('inner');
+            // console.log(data);
+            for (i in data) {
+                var p = document.createElement('p');
+                var node = document.createTextNode(data[i].message);
+                var id = document.createTextNode(data[i].id);
+                var isp = document.createElement('h5');
+                isp.setAttribute('class', 'id');
+                isp.appendChild(id);
+                p.appendChild(isp);
+                p.appendChild(node);
+                inner.appendChild(p);
+
+            }
+        }).then(err => {
+            console.log(err);
+        })
+    }
+
+    outer.addEventListener('scroll', () => {
+        if (outer.scrollHeight == outer.scrollTop + outer.clientHeight) {
+            lastId = document.getElementsByClassName('id');
+            if (lastId[0] != 'undefined') {
+                last = lastId.length;
+                lastIdNumb = lastId[last - 1].innerHTML;
+            } else
+                lastIdNumb = 0;
+            console.log(lastIdNumb);
+            console.log('occure');
+            fetchData(Number(lastIdNumb) + 1);
+        }
+    });
+</script>
+
+</html>
