@@ -1,5 +1,5 @@
 !/.gitignore
 # /webSocket/*.*
 !/webSocket/src/.
-/webSocket/bin/*
+# /webSocket/bin/*
 /webSocket/vendor/*
